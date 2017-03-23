@@ -1,0 +1,29 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "bim:BuildingElement" "bim:Slab" "bim:Wall" "bim:Beam" "bim:Plastic" "bim:Glass" "bim:Concrete" "bim:Location" "bim:Door" "bim:Steel" "bim:Materials" "bim:Site" "bim:StructuralElement" "bim:Foundation" "bim:Wood" "bim:Column" "bim:Factory" "3d79153b:15afb7fd538:-7fe2" "bim:Window" "3d79153b:15afb7fd538:-7feb" "bim:Facade" ; /*classes style*/
+	"bim:Site" -> "bim:Location" [ label = "rdfs:subClassOf" ];
+	"bim:Wood" -> "bim:Materials" [ label = "rdfs:subClassOf" ];
+	"bim:Foundation" -> "3d79153b:15afb7fd538:-7feb" [ label = "rdfs:subClassOf" ];
+	"bim:Foundation" -> "bim:StructuralElement" [ label = "rdfs:subClassOf" ];
+	"bim:Foundation" -> "bim:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim:Door" -> "bim:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim:Glass" -> "bim:Materials" [ label = "rdfs:subClassOf" ];
+	"bim:Wall" -> "bim:StructuralElement" [ label = "rdfs:subClassOf" ];
+	"bim:Wall" -> "bim:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim:Steel" -> "bim:Materials" [ label = "rdfs:subClassOf" ];
+	"bim:Beam" -> "bim:StructuralElement" [ label = "rdfs:subClassOf" ];
+	"bim:Beam" -> "bim:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim:Factory" -> "bim:Location" [ label = "rdfs:subClassOf" ];
+	"bim:Facade" -> "bim:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim:Column" -> "bim:StructuralElement" [ label = "rdfs:subClassOf" ];
+	"bim:Column" -> "bim:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim:Window" -> "bim:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim:Slab" -> "bim:StructuralElement" [ label = "rdfs:subClassOf" ];
+	"bim:Slab" -> "bim:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim:StructuralElement" -> "bim:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim:Location" -> "3d79153b:15afb7fd538:-7fe2" [ label = "rdfs:subClassOf" ];
+	"bim:Plastic" -> "bim:Materials" [ label = "rdfs:subClassOf" ];
+	"bim:Concrete" -> "bim:Materials" [ label = "rdfs:subClassOf" ];
+
+}

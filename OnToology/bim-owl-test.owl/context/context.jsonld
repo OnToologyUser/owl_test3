@@ -1,0 +1,145 @@
+{
+  "@context" : {
+    "width" : {
+      "@id" : "http://purl.org/net/bim-owl-test#width",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "Wood" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Wood"
+    },
+    "Plastic" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Plastic"
+    },
+    "topDataProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+    },
+    "height" : {
+      "@id" : "http://purl.org/net/bim-owl-test#height",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "hasParent" : {
+      "@id" : "http://purl.org/net/bim-owl-test#hasParent",
+      "@type" : "@id"
+    },
+    "SteelElement" : {
+      "@id" : "http://purl.org/net/bim-owl-test#SteelElement"
+    },
+    "position_X" : {
+      "@id" : "http://purl.org/net/bim-owl-test#position_X",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "isDeliveredTo" : {
+      "@id" : "http://purl.org/net/bim-owl-test#isDeliveredTo",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "Concrete" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Concrete"
+    },
+    "Location" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Location"
+    },
+    "Facade" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Facade"
+    },
+    "isConnected" : {
+      "@id" : "http://purl.org/net/bim-owl-test#isConnected",
+      "@type" : "@id"
+    },
+    "ConcreteElement" : {
+      "@id" : "http://purl.org/net/bim-owl-test#ConcreteElement"
+    },
+    "Materials" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Materials"
+    },
+    "isMadeBy" : {
+      "@id" : "http://purl.org/net/bim-owl-test#isMadeBy",
+      "@type" : "@id"
+    },
+    "Glass" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Glass"
+    },
+    "StructuralElement" : {
+      "@id" : "http://purl.org/net/bim-owl-test#StructuralElement"
+    },
+    "topObjectProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+      "@type" : "@id"
+    },
+    "Building" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Building"
+    },
+    "Door" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Door"
+    },
+    "BuildingElement" : {
+      "@id" : "http://purl.org/net/bim-owl-test#BuildingElement"
+    },
+    "InSituElement" : {
+      "@id" : "http://purl.org/net/bim-owl-test#InSituElement"
+    },
+    "WoodElement" : {
+      "@id" : "http://purl.org/net/bim-owl-test#WoodElement"
+    },
+    "Foundation" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Foundation"
+    },
+    "length" : {
+      "@id" : "http://purl.org/net/bim-owl-test#length",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "Window" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Window"
+    },
+    "Column" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Column"
+    },
+    "position_Z" : {
+      "@id" : "http://purl.org/net/bim-owl-test#position_Z",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "Site" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Site"
+    },
+    "hasElements" : {
+      "@id" : "http://purl.org/net/bim-owl-test#hasElements",
+      "@type" : "@id"
+    },
+    "Beam" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Beam"
+    },
+    "hasBuiltAt" : {
+      "@id" : "http://purl.org/net/bim-owl-test#hasBuiltAt",
+      "@type" : "@id"
+    },
+    "Wall" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Wall"
+    },
+    "Steel" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Steel"
+    },
+    "Slab" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Slab"
+    },
+    "position_Y" : {
+      "@id" : "http://purl.org/net/bim-owl-test#position_Y",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "Factory" : {
+      "@id" : "http://purl.org/net/bim-owl-test#Factory"
+    },
+    "PrefabricatedElement" : {
+      "@id" : "http://purl.org/net/bim-owl-test#PrefabricatedElement"
+    },
+    "isConstructedAt" : {
+      "@id" : "http://purl.org/net/bim-owl-test#isConstructedAt",
+      "@type" : "@id"
+    },
+    "material" : {
+      "@id" : "http://purl.org/net/bim-owl-test#material",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    }
+  }
+}

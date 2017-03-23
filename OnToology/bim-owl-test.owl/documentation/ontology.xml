@@ -1,0 +1,580 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:bim="http://purl.org/net/bim-owl-test#" > 
+  <rdf:Description rdf:nodeID="A0">
+    <rdf:rest rdf:nodeID="A1"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#material"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <owl:someValuesFrom rdf:resource="http://purl.org/net/bim-owl-test#Concrete"/>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#isMadeBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#hasElements">
+    <rdfs:label xml:lang="en">hasElements</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#Building"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <owl:onClass rdf:resource="http://purl.org/net/bim-owl-test#Column"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#isConnected"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <swrl:argument2 rdf:resource="urn:swrl#y"/>
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+    <swrl:propertyPredicate rdf:resource="http://purl.org/net/bim-owl-test#hasBuiltAt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#width">
+    <rdfs:label xml:lang="en">width</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#isConstructedAt">
+    <rdfs:label xml:lang="en">isConstructedAt</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/net/bim-owl-test#Site"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#Building"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <rdf:rest rdf:nodeID="A8"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <rdf:rest rdf:nodeID="A10"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Column_2">
+    <bim:isMadeBy rdf:resource="http://purl.org/net/bim-owl-test#Portland_Concrete"/>
+    <rdf:type rdf:resource="http://purl.org/net/bim-owl-test#Column"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#height">
+    <rdfs:label>height</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Column">
+    <rdfs:label xml:lang="en">Column</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A11"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#StructuralElement"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <rdf:rest rdf:nodeID="A13"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A14">
+    <rdf:rest rdf:nodeID="A0"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#length"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A15">
+    <owl:onClass rdf:resource="http://purl.org/net/bim-owl-test#Materials"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#isMadeBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A16">
+    <owl:intersectionOf rdf:nodeID="A17"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#isConnected">
+    <rdfs:label xml:lang="en">isConnected</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/net/bim-owl-test#StructuralElement"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#StructuralElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A18">
+    <rdf:rest rdf:nodeID="A19"/>
+    <rdf:first rdf:nodeID="A4"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#ConcreteElement">
+    <rdfs:label xml:lang="en">ConcreteElement</rdfs:label>
+    <owl:equivalentClass rdf:nodeID="A20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Beam">
+    <rdfs:label xml:lang="en">Beam</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A15"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#StructuralElement"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <owl:equivalentClass rdf:nodeID="A3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Wood">
+    <rdfs:label xml:lang="en">Wood</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#Materials"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Factory_1">
+    <rdf:type rdf:resource="http://purl.org/net/bim-owl-test#Factory"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Door">
+    <rdfs:label xml:lang="en">Door</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A21"/>
+    <rdfs:subClassOf rdf:nodeID="A22"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Window_1">
+    <bim:hasBuiltAt rdf:resource="http://purl.org/net/bim-owl-test#Factory_1"/>
+    <rdf:type rdf:resource="http://purl.org/net/bim-owl-test#Window"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
+    <owl:intersectionOf rdf:nodeID="A9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A24">
+    <owl:someValuesFrom rdf:resource="http://purl.org/net/bim-owl-test#Site"/>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#hasBuiltAt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <owl:distinctMembers rdf:nodeID="A26"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A27">
+    <owl:someValuesFrom rdf:resource="http://purl.org/net/bim-owl-test#Concrete"/>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#isMadeBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A28">
+    <owl:someValuesFrom rdf:resource="http://purl.org/net/bim-owl-test#Steel"/>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#isMadeBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:swrl#x">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Slab">
+    <rdfs:label xml:lang="en">Slab</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A29"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#StructuralElement"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A30">
+    <swrl:head rdf:nodeID="A31"/>
+    <swrl:body rdf:nodeID="A18"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#position_X">
+    <rdfs:label xml:lang="en">position_X</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A24"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A31">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A32"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A33">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#Wood"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A34">
+    <rdf:rest rdf:nodeID="A5"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:swrl#y">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Building">
+    <rdfs:label xml:lang="en">Building</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A35">
+    <rdf:rest rdf:nodeID="A36"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#length">
+    <rdfs:label>length</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Materials">
+    <rdfs:label xml:lang="en">Materials</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#material">
+    <rdfs:label>material</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Site">
+    <rdfs:label xml:lang="en">Site</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#Location"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#position_Y">
+    <rdfs:label xml:lang="en">position_Y</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#isMadeBy">
+    <rdfs:label xml:lang="en">isMadeBy</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/net/bim-owl-test#Materials"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#width"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A32">
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+    <swrl:classPredicate rdf:resource="http://purl.org/net/bim-owl-test#PrefabricatedElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <owl:intersectionOf rdf:nodeID="A12"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <owl:someValuesFrom rdf:resource="http://purl.org/net/bim-owl-test#Wood"/>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#isMadeBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A37">
+    <owl:unionOf rdf:nodeID="A38"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#position_Z">
+    <rdfs:label xml:lang="en">position_Z</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A38">
+    <rdf:rest rdf:nodeID="A39"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#Factory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Glass">
+    <rdfs:label xml:lang="en">Glass</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#Materials"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A40">
+    <rdf:rest rdf:nodeID="A41"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#Concrete"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A42">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#Column_2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Door_1">
+    <bim:hasBuiltAt rdf:resource="http://purl.org/net/bim-owl-test#Factory_1"/>
+    <rdf:type rdf:resource="http://purl.org/net/bim-owl-test#Door"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#SteelElement">
+    <rdfs:label xml:lang="en">SteelElement</rdfs:label>
+    <owl:equivalentClass rdf:nodeID="A43"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A44">
+    <owl:onClass rdf:resource="http://purl.org/net/bim-owl-test#Factory"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#hasBuiltAt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Portland_Concrete">
+    <rdf:type rdf:resource="http://purl.org/net/bim-owl-test#Concrete"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A22">
+    <owl:onClass rdf:resource="http://purl.org/net/bim-owl-test#Factory"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#hasBuiltAt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A43">
+    <owl:intersectionOf rdf:nodeID="A35"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A45">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A46"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A17">
+    <rdf:rest rdf:nodeID="A47"/>
+    <rdf:first rdf:nodeID="A2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A48">
+    <rdf:rest rdf:nodeID="A49"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#Door"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Location">
+    <rdfs:label xml:lang="en">Location</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A37"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A39">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#Site"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#InSituElement">
+    <rdfs:label xml:lang="en">InSituElement</rdfs:label>
+    <owl:equivalentClass rdf:nodeID="A50"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#WoodElement">
+    <rdfs:label xml:lang="en">WoodElement</rdfs:label>
+    <owl:equivalentClass rdf:nodeID="A51"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A41">
+    <rdf:rest rdf:nodeID="A33"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#Steel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Concrete">
+    <rdfs:label xml:lang="en">Concrete</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#Materials"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A26">
+    <rdf:rest rdf:nodeID="A42"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#Column_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#StructuralElement">
+    <rdfs:label xml:lang="en">StructuralElement</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Steel">
+    <rdfs:label xml:lang="en">Steel</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#Materials"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A27"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Factory">
+    <rdfs:label xml:lang="en">Factory</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#Location"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A51">
+    <owl:intersectionOf rdf:nodeID="A34"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A46">
+    <swrl:argument1 rdf:resource="urn:swrl#x"/>
+    <swrl:classPredicate rdf:resource="http://purl.org/net/bim-owl-test#Door"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A52">
+    <owl:onClass rdf:resource="http://purl.org/net/bim-owl-test#Site"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#hasBuiltAt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A49">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#Window"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A29">
+    <owl:onClass rdf:resource="http://purl.org/net/bim-owl-test#Site"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#hasBuiltAt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Jobsite_1">
+    <rdf:type rdf:resource="http://purl.org/net/bim-owl-test#Site"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#BuildingElement">
+    <rdfs:label xml:lang="en">BuildingElement</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#hasParent">
+    <rdfs:label xml:lang="en">hasParent</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/net/bim-owl-test#Wall"/>
+    <rdfs:domain rdf:nodeID="A53"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <owl:someValuesFrom rdf:nodeID="A54"/>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#isMadeBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A55">
+    <rdf:rest rdf:nodeID="A14"/>
+    <rdf:first rdf:resource="http://purl.org/net/bim-owl-test#height"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A36">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A28"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A56">
+    <owl:onClass rdf:resource="http://purl.org/net/bim-owl-test#Factory"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#hasBuiltAt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A19">
+    <rdf:rest rdf:nodeID="A45"/>
+    <rdf:first rdf:nodeID="A57"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Beam_1">
+    <bim:isMadeBy rdf:resource="http://purl.org/net/bim-owl-test#Portland_Concrete"/>
+    <bim:isConnected rdf:resource="http://purl.org/net/bim-owl-test#Column_2"/>
+    <bim:isConnected rdf:resource="http://purl.org/net/bim-owl-test#Column_1"/>
+    <bim:hasBuiltAt rdf:resource="http://purl.org/net/bim-owl-test#Jobsite_1"/>
+    <rdf:type rdf:resource="http://purl.org/net/bim-owl-test#Beam"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A58"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A47">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A52"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#PrefabricatedElement">
+    <rdfs:label xml:lang="en">PrefabricatedElement</rdfs:label>
+    <owl:equivalentClass rdf:nodeID="A23"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#hasBuiltAt">
+    <rdfs:label xml:lang="en">hasBuiltAt</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/net/bim-owl-test#Location"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Foundation">
+    <rdfs:label xml:lang="en">Foundation</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A16"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#StructuralElement"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Wall">
+    <rdfs:label xml:lang="en">Wall</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A59"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#StructuralElement"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A60">
+    <owl:members rdf:nodeID="A55"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A54">
+    <owl:unionOf rdf:nodeID="A40"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#isDeliveredTo">
+    <rdfs:label xml:lang="en">isDeliveredTo</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/net/bim-owl-test#Site"/>
+    <rdfs:domain rdf:resource="http://purl.org/net/bim-owl-test#PrefabricatedElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A59">
+    <owl:onClass rdf:resource="http://purl.org/net/bim-owl-test#Site"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#hasBuiltAt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A57">
+    <swrl:argument1 rdf:resource="urn:swrl#y"/>
+    <swrl:classPredicate rdf:resource="http://purl.org/net/bim-owl-test#Factory"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Plastic">
+    <rdfs:label xml:lang="en">Plastic</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#Materials"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Column_1">
+    <bim:isMadeBy rdf:resource="http://purl.org/net/bim-owl-test#Portland_Concrete"/>
+    <rdf:type rdf:resource="http://purl.org/net/bim-owl-test#Column"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A21">
+    <owl:onClass rdf:resource="http://purl.org/net/bim-owl-test#Materials"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#isMadeBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A58">
+    <owl:someValuesFrom rdf:resource="http://purl.org/net/bim-owl-test#Factory"/>
+    <owl:onProperty rdf:resource="http://purl.org/net/bim-owl-test#hasBuiltAt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Window">
+    <rdfs:label xml:lang="en">Window</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A44"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A50">
+    <owl:intersectionOf rdf:nodeID="A7"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A53">
+    <owl:unionOf rdf:nodeID="A48"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/net/bim-owl-test#Facade">
+    <rdfs:label xml:lang="en">Facade</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A56"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/bim-owl-test#BuildingElement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,418 @@
+@prefix :        <http://purl.org/net/bim-owl-test#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl:    <http://www.w3.org/2003/11/swrl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix swrlb:   <http://www.w3.org/2003/11/swrlb#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bim:     <http://purl.org/net/bim-owl-test#> .
+
+bim:hasElements
+      a       owl:InverseFunctionalProperty , owl:ObjectProperty ;
+      rdfs:domain bim:Building ;
+      rdfs:label "hasElements"@en ;
+      rdfs:range bim:BuildingElement .
+
+bim:width
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain bim:BuildingElement ;
+      rdfs:label "width"@en ;
+      rdfs:range xsd:nonNegativeInteger .
+
+bim:isConstructedAt
+      a       owl:FunctionalProperty , owl:ObjectProperty ;
+      rdfs:domain bim:Building ;
+      rdfs:label "isConstructedAt"@en ;
+      rdfs:range bim:Site ;
+      rdfs:subPropertyOf owl:topObjectProperty .
+
+bim:Column_2
+      a       owl:NamedIndividual , bim:Column ;
+      bim:isMadeBy bim:Portland_Concrete .
+
+bim:height
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain bim:BuildingElement ;
+      rdfs:label "height" ;
+      rdfs:range xsd:nonNegativeInteger ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+bim:Column
+      a       owl:Class ;
+      rdfs:label "Column"@en ;
+      rdfs:subClassOf bim:StructuralElement , bim:BuildingElement ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:onProperty bim:isMadeBy ;
+                owl:someValuesFrom
+                        [ a       owl:Class ;
+                          owl:unionOf (bim:Concrete bim:Steel bim:Wood)
+                        ]
+              ] .
+
+bim:isConnected
+      a       owl:ObjectProperty , owl:SymmetricProperty ;
+      rdfs:domain bim:StructuralElement ;
+      rdfs:label "isConnected"@en ;
+      rdfs:range bim:StructuralElement .
+
+bim:ConcreteElement
+      a       owl:Class ;
+      rdfs:label "ConcreteElement"@en ;
+      owl:equivalentClass
+              [ a       owl:Class ;
+                owl:intersectionOf (bim:BuildingElement [ a       owl:Restriction ;
+                            owl:onProperty bim:isMadeBy ;
+                            owl:someValuesFrom bim:Concrete
+                          ])
+              ] .
+
+bim:Beam
+      a       owl:Class ;
+      rdfs:label "Beam"@en ;
+      rdfs:subClassOf bim:StructuralElement , bim:BuildingElement ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass bim:Materials ;
+                owl:onProperty bim:isMadeBy
+              ] ;
+      owl:equivalentClass
+              [ a       owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "2"^^xsd:nonNegativeInteger ;
+                owl:onClass bim:Column ;
+                owl:onProperty bim:isConnected
+              ] .
+
+bim:Wood
+      a       owl:Class ;
+      rdfs:label "Wood"@en ;
+      rdfs:subClassOf bim:Materials .
+
+bim:Factory_1
+      a       bim:Factory , owl:NamedIndividual .
+
+bim:Door
+      a       owl:Class ;
+      rdfs:label "Door"@en ;
+      rdfs:subClassOf bim:BuildingElement ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass bim:Factory ;
+                owl:onProperty bim:hasBuiltAt
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass bim:Materials ;
+                owl:onProperty bim:isMadeBy
+              ] .
+
+bim:Window_1
+      a       owl:NamedIndividual , bim:Window ;
+      bim:hasBuiltAt bim:Factory_1 .
+
+[]    a       owl:AllDifferent ;
+      owl:distinctMembers (bim:Column_1 bim:Column_2) .
+
+<urn:swrl#x>
+      a       swrl:Variable .
+
+bim:Slab
+      a       owl:Class ;
+      rdfs:label "Slab"@en ;
+      rdfs:subClassOf bim:StructuralElement , bim:BuildingElement ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:onClass bim:Site ;
+                owl:onProperty bim:hasBuiltAt ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+[]    a       swrl:Imp ;
+      swrl:body
+              [ a       swrl:AtomList ;
+                rdf:first
+                        [ a       swrl:IndividualPropertyAtom ;
+                          swrl:argument1 <urn:swrl#x> ;
+                          swrl:argument2 <urn:swrl#y> ;
+                          swrl:propertyPredicate
+                                  bim:hasBuiltAt
+                        ] ;
+                rdf:rest
+                        [ a       swrl:AtomList ;
+                          rdf:first
+                                  [ a       swrl:ClassAtom ;
+                                    swrl:argument1 <urn:swrl#y> ;
+                                    swrl:classPredicate bim:Factory
+                                  ] ;
+                          rdf:rest
+                                  [ a       swrl:AtomList ;
+                                    rdf:first
+                                            [ a       swrl:ClassAtom ;
+                                              swrl:argument1 <urn:swrl#x> ;
+                                              swrl:classPredicate bim:Door
+                                            ] ;
+                                    rdf:rest ()
+                                  ]
+                        ]
+              ] ;
+      swrl:head
+              [ a       swrl:AtomList ;
+                rdf:first
+                        [ a       swrl:ClassAtom ;
+                          swrl:argument1 <urn:swrl#x> ;
+                          swrl:classPredicate bim:PrefabricatedElement
+                        ] ;
+                rdf:rest ()
+              ] .
+
+bim:position_X
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain bim:BuildingElement ;
+      rdfs:label "position_X"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+<urn:swrl#y>
+      a       swrl:Variable .
+
+bim:Building
+      a       owl:Class ;
+      rdfs:label "Building"@en .
+
+bim:length
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain bim:BuildingElement ;
+      rdfs:label "length" ;
+      rdfs:range xsd:nonNegativeInteger ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+bim:Materials
+      a       owl:Class ;
+      rdfs:label "Materials"@en .
+
+bim:material
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain bim:BuildingElement ;
+      rdfs:label "material" ;
+      rdfs:range xsd:string .
+
+bim:Site
+      a       owl:Class ;
+      rdfs:label "Site"@en ;
+      rdfs:subClassOf bim:Location .
+
+bim:position_Y
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain bim:BuildingElement ;
+      rdfs:label "position_Y"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+bim:isMadeBy
+      a       owl:FunctionalProperty , owl:ObjectProperty ;
+      rdfs:domain bim:BuildingElement ;
+      rdfs:label "isMadeBy"@en ;
+      rdfs:range bim:Materials .
+
+bim:position_Z
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain bim:BuildingElement ;
+      rdfs:label "position_Z"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+bim:Glass
+      a       owl:Class ;
+      rdfs:label "Glass"@en ;
+      rdfs:subClassOf bim:Materials .
+
+bim:Door_1
+      a       bim:Door , owl:NamedIndividual ;
+      bim:hasBuiltAt bim:Factory_1 .
+
+bim:SteelElement
+      a       owl:Class ;
+      rdfs:label "SteelElement"@en ;
+      owl:equivalentClass
+              [ a       owl:Class ;
+                owl:intersectionOf (bim:BuildingElement [ a       owl:Restriction ;
+                            owl:onProperty bim:isMadeBy ;
+                            owl:someValuesFrom bim:Steel
+                          ])
+              ] .
+
+bim:Portland_Concrete
+      a       owl:NamedIndividual , bim:Concrete .
+
+bim:Location
+      a       owl:Class ;
+      rdfs:label "Location"@en ;
+      rdfs:subClassOf
+              [ a       owl:Class ;
+                owl:unionOf (bim:Factory bim:Site)
+              ] .
+
+bim:InSituElement
+      a       owl:Class ;
+      rdfs:label "InSituElement"@en ;
+      owl:equivalentClass
+              [ a       owl:Class ;
+                owl:intersectionOf (bim:BuildingElement [ a       owl:Restriction ;
+                            owl:onProperty bim:hasBuiltAt ;
+                            owl:someValuesFrom bim:Site
+                          ])
+              ] .
+
+bim:WoodElement
+      a       owl:Class ;
+      rdfs:label "WoodElement"@en ;
+      owl:equivalentClass
+              [ a       owl:Class ;
+                owl:intersectionOf (bim:BuildingElement [ a       owl:Restriction ;
+                            owl:onProperty bim:isMadeBy ;
+                            owl:someValuesFrom bim:Wood
+                          ])
+              ] .
+
+bim:Concrete
+      a       owl:Class ;
+      rdfs:label "Concrete"@en ;
+      rdfs:subClassOf bim:Materials .
+
+bim:StructuralElement
+      a       owl:Class ;
+      rdfs:label "StructuralElement"@en ;
+      rdfs:subClassOf bim:BuildingElement .
+
+bim:Steel
+      a       owl:Class ;
+      rdfs:label "Steel"@en ;
+      rdfs:subClassOf bim:Materials .
+
+bim:Factory
+      a       owl:Class ;
+      rdfs:label "Factory"@en ;
+      rdfs:subClassOf bim:Location .
+
+bim:Jobsite_1
+      a       owl:NamedIndividual , bim:Site .
+
+bim:BuildingElement
+      a       owl:Class ;
+      rdfs:label "BuildingElement"@en .
+
+bim:hasParent
+      a       owl:FunctionalProperty , owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (bim:Door bim:Window)
+              ] ;
+      rdfs:label "hasParent"@en ;
+      rdfs:range bim:Wall ;
+      rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://purl.org/net/bim-owl-test>
+      a       owl:Ontology .
+
+bim:Beam_1
+      a       owl:NamedIndividual , bim:Beam ;
+      bim:hasBuiltAt bim:Jobsite_1 ;
+      bim:isConnected bim:Column_1 , bim:Column_2 ;
+      bim:isMadeBy bim:Portland_Concrete .
+
+bim:PrefabricatedElement
+      a       owl:Class ;
+      rdfs:label "PrefabricatedElement"@en ;
+      owl:equivalentClass
+              [ a       owl:Class ;
+                owl:intersectionOf (bim:BuildingElement [ a       owl:Restriction ;
+                            owl:onProperty bim:hasBuiltAt ;
+                            owl:someValuesFrom bim:Factory
+                          ])
+              ] .
+
+bim:hasBuiltAt
+      a       owl:FunctionalProperty , owl:ObjectProperty ;
+      rdfs:domain bim:BuildingElement ;
+      rdfs:label "hasBuiltAt"@en ;
+      rdfs:range bim:Location .
+
+bim:Foundation
+      a       owl:Class ;
+      rdfs:label "Foundation"@en ;
+      rdfs:subClassOf bim:StructuralElement , bim:BuildingElement ;
+      rdfs:subClassOf
+              [ a       owl:Class ;
+                owl:intersectionOf ([ a       owl:Restriction ;
+                            owl:onProperty bim:isMadeBy ;
+                            owl:someValuesFrom bim:Concrete
+                          ] [ a       owl:Restriction ;
+                            owl:onClass bim:Site ;
+                            owl:onProperty bim:hasBuiltAt ;
+                            owl:qualifiedCardinality
+                                    "1"^^xsd:nonNegativeInteger
+                          ])
+              ] .
+
+bim:Wall
+      a       owl:Class ;
+      rdfs:label "Wall"@en ;
+      rdfs:subClassOf bim:StructuralElement , bim:BuildingElement ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:onClass bim:Site ;
+                owl:onProperty bim:hasBuiltAt ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+[]    a       owl:AllDisjointProperties ;
+      owl:members (bim:height bim:length bim:material bim:width) .
+
+bim:isDeliveredTo
+      a       owl:FunctionalProperty , owl:ObjectProperty ;
+      rdfs:domain bim:PrefabricatedElement ;
+      rdfs:label "isDeliveredTo"@en ;
+      rdfs:range bim:Site ;
+      rdfs:subPropertyOf owl:topObjectProperty .
+
+bim:Plastic
+      a       owl:Class ;
+      rdfs:label "Plastic"@en ;
+      rdfs:subClassOf bim:Materials .
+
+bim:Column_1
+      a       owl:NamedIndividual , bim:Column ;
+      bim:isMadeBy bim:Portland_Concrete .
+
+bim:Window
+      a       owl:Class ;
+      rdfs:label "Window"@en ;
+      rdfs:subClassOf bim:BuildingElement ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass bim:Factory ;
+                owl:onProperty bim:hasBuiltAt
+              ] .
+
+bim:Facade
+      a       owl:Class ;
+      rdfs:label "Facade"@en ;
+      rdfs:subClassOf bim:BuildingElement ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minQualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger ;
+                owl:onClass bim:Factory ;
+                owl:onProperty bim:hasBuiltAt
+              ] .
